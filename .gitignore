@@ -46,3 +46,6 @@ _ReSharper*/
 
 #Asp.net
 [Aa]pp_Data*
+
+#IDEA
+#.idea*
