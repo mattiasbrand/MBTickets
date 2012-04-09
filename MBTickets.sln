@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{20C8C419-CB3C-4A28-AFEE-DB4E4B16F58C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{5F3D432E-F914-442B-A6D2-D433E2CA9DE5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20C8C419-CB3C-4A28-AFEE-DB4E4B16F58C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C8C419-CB3C-4A28-AFEE-DB4E4B16F58C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C8C419-CB3C-4A28-AFEE-DB4E4B16F58C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C8C419-CB3C-4A28-AFEE-DB4E4B16F58C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3D432E-F914-442B-A6D2-D433E2CA9DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3D432E-F914-442B-A6D2-D433E2CA9DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3D432E-F914-442B-A6D2-D433E2CA9DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3D432E-F914-442B-A6D2-D433E2CA9DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

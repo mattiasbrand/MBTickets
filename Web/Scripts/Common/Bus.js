@@ -1,0 +1,1 @@
+﻿window.Bus = Backbone.Events;

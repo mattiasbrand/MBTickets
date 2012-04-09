@@ -1,0 +1,66 @@
+@using System.Web.Optimization
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+        <link href="/Content/Tickets.css" rel="stylesheet" type="text/css" />
+        <link href="@BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+        <link href="/Content/jquery.gritter.css" rel="stylesheet" type="text/css" />
+
+        <script src="/Scripts/jquery-1.7.1.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery-ui-1.8.11.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.validate.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+        <script src="/Scripts/underscore.js" type="text/javascript"></script>
+        <script src="/Scripts/backbone.js" type="text/javascript"></script>
+        <script src="/Scripts/jquery.gritter.js" type="text/javascript"></script>
+        <script src="/Scripts/Common/utils.js" type="text/javascript"></script>
+        <script src="/Scripts/Common/backbone-extensions.js" type="text/javascript"></script>
+        <script src="/Scripts/Common/Bus.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here.", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Tickets", "Tickets", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+                <div class="float-right">
+                    <ul id="social">
+                        <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+                        <li><a href="http://twitter.com" class="twitter">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+﻿#newDescription {
+    display: block;
+}
+
+#listView {
+    display: none;
+}
+
+#createView {
+    display: none;
+}
