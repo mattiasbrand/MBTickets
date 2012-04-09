@@ -34,7 +34,7 @@
             data: this.model.toJSON(),
             success: function (response) {
                 window.Bus.trigger("ticket:created", this.model);
-                $.gritter.add({ title: "Success!", text: "Ticket successfully created." });
+                $.gritter.add({ title: "Created", text: "Ticket successfully created." });
             } .bind(this),
             error: function (xhr, status, error) {
                 $.gritter.add({ title: "Error!", text: "Error on server when creating ticket.", sticky: true });

@@ -10,14 +10,11 @@ window.TicketListCollection = Backbone.Collection.extend({
 window.TicketListView = Backbone.View.extend({
     initialize: function (attributes) {
         _.bindAll(this);
-        this.template = _.template($("#listTemplate").html());
-        this.collection.bind("reset", this.render);
-        this.collection.bind("change:name", this.render);
-        this.collection.bind("add", this.render);
-        this.collection.bind("remove", this.render);
+        this.collection.bind("reset", this.reset);
         this.router = attributes.router;
-        
-        window.Bus.on("ticket:created", _.bind(function(ticket) {
+        this.content = this.$("#listContent");
+
+        window.Bus.on("ticket:created", _.bind(function (ticket) {
             this.collection.add(ticket);
         }, this));
     },
@@ -25,13 +22,20 @@ window.TicketListView = Backbone.View.extend({
     events: {
         "click #createTicketLink": "_createNew"
     },
-    
-    render: function () {
-        var data = { items: this.collection.toJSON() };
-        var html = this.template(data);
-        $(this.el).html(html);        
 
+    reset: function () {
+        this.content.empty();
+        this.render();
+    },
+
+    render: function () {
+        _(this.collection.models).each(this.add, this);
         return this;
+    },
+
+    add: function (ticket) {
+        var itemView = new window.TicketListItemView({ model: ticket });
+        this.content.append(itemView.render().el);
     },
 
     _createNew: function () {

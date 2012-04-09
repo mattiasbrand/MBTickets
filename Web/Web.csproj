@@ -191,6 +191,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\ManageTicket\CreateTicketView.js" />
     <Content Include="Scripts\Common\Bus.js" />
+    <Content Include="Scripts\ManageTicket\TicketListItemView.js" />
     <Content Include="Scripts\ManageTicket\TicketListView.js" />
   </ItemGroup>
   <ItemGroup>

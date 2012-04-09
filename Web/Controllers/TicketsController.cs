@@ -36,8 +36,10 @@ namespace Web.Controllers
         }
 
         // DELETE /api/values/5
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
+            var ticket = RavenSession.Load<Ticket>(id);
+            RavenSession.Delete(ticket);
         }
     }
 }
