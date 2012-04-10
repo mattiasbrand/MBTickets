@@ -9,3 +9,27 @@
 #createView {
     display: none;
 }
+
+#ticketList {
+    border-spacing: 0px;
+    width: 400px;
+    margin-top: 10px;
+}
+
+#ticketList th {
+    text-align: left;
+}
+
+#ticketList td {
+    border-top: solid 2px transparent;
+    border-bottom: solid 2px transparent;
+}
+
+#ticketList td a {
+    float: left;
+}
+
+#ticketList tr:hover td {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}

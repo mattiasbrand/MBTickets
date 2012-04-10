@@ -19,21 +19,20 @@
     },
 
     destroy: function (e) {
-        if (confirm('Are you sure you want to delete this?')) {            
-            $.ajax({
-                url: window.urls.ticketApiUrl,
-                type: "DELETE",
-                data: { id: this.model.get("Id") },
-                success: function (response) {
-                    //window.Bus.trigger("ticket:deleted", this.model);
-                    this.model.destroy();
-                    $.gritter.add({ title: "Deleted", text: "Ticket deleted." });
-                } .bind(this),
-                error: function (xhr, status, error) {
-                    $.gritter.add({ title: "Error!", text: "Error on server when deleting ticket.", sticky: true });
-                }
-            });
-        }
+        if (confirm('Are you sure you want to delete this?') === false) return false;
+        var model = this.model;
+
+        var request = $.ajax({
+            url: window.urls.ticketApiUrl,
+            type: "DELETE",
+            data: { id: this.model.get("Id") }
+        });
+        request.done(function () {
+            model.destroy();
+            $.gritter.add({ title: "Deleted", text: "Ticket deleted." });
+        });
+        request.fail(function () { $.gritter.add({ title: "Error!", text: "Error on server when deleting ticket.", sticky: true }); });
+
         return false;
     },
 

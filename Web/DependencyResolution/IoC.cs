@@ -48,7 +48,7 @@ namespace Web.DependencyResolution
                                             Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"App_Data\RavenDB"),
                                         UseEmbeddedHttpServer = true
                                     };
-            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8080);
+            NonAdminHttp.EnsureCanListenToWhenInNonAdminContext(8081);
             documentStore.Initialize();
             return documentStore;
         }

@@ -15,7 +15,7 @@ window.TicketListView = Backbone.View.extend({
         this.content = this.$("#listContent");
 
         window.Bus.on("ticket:created", _.bind(function (ticket) {
-            this.collection.add(ticket);
+            this.add(ticket);
         }, this));
     },
 

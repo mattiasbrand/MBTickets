@@ -26,19 +26,20 @@
 
     _save: function () {
         var data = { Id: window.common.newGuid(), Creator: $("a.username").text(), Title: this.title.val(), Description: this.description.val() };
-        this.model.set(data); // add selected data to model
+        var model = this.model;
+        model.set(data); // add selected data to model
 
-        $.ajax({
+        var request = $.ajax({
             url: window.urls.ticketApiUrl,
             type: "PUT",
-            data: this.model.toJSON(),
-            success: function (response) {
-                window.Bus.trigger("ticket:created", this.model);
-                $.gritter.add({ title: "Created", text: "Ticket successfully created." });
-            } .bind(this),
-            error: function (xhr, status, error) {
-                $.gritter.add({ title: "Error!", text: "Error on server when creating ticket.", sticky: true });
-            }
+            data: model.toJSON()
+        });
+        request.done(function () {
+            window.Bus.trigger("ticket:created", model);
+            $.gritter.add({ title: "Created", text: "Ticket successfully created." });
+        });
+        request.fail(function () {
+            $.gritter.add({ title: "Error!", text: "Error on server when creating ticket.", sticky: true });
         });
 
         window.history.back();
